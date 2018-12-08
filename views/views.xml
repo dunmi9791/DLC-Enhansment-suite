@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="dlc__enhansment__suite.list">
+      <field name="name">DLC_Enhansment_Suite list</field>
+      <field name="model">dlc__enhansment__suite.dlc__enhansment__suite</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="dlc__enhansment__suite.action_window">
+      <field name="name">DLC_Enhansment_Suite window</field>
+      <field name="res_model">dlc__enhansment__suite.dlc__enhansment__suite</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="dlc__enhansment__suite.action_server">
+      <field name="name">DLC_Enhansment_Suite server</field>
+      <field name="model_id" ref="model_dlc__enhansment__suite_dlc__enhansment__suite"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="DLC_Enhansment_Suite" id="dlc__enhansment__suite.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="dlc__enhansment__suite.menu_1" parent="dlc__enhansment__suite.menu_root"/>
+    <menuitem name="Menu 2" id="dlc__enhansment__suite.menu_2" parent="dlc__enhansment__suite.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="dlc__enhansment__suite.menu_1_list" parent="dlc__enhansment__suite.menu_1"
+              action="dlc__enhansment__suite.action_window"/>
+    <menuitem name="Server to list" id="dlc__enhansment__suite" parent="dlc__enhansment__suite.menu_2"
+              action="dlc__enhansment__suite.action_server"/>
+    -->
+  </data>
+</odoo>

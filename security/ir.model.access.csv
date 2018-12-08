@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dlc__enhansment__suite_dlc__enhansment__suite,dlc__enhansment__suite.dlc__enhansment__suite,model_dlc__enhansment__suite_dlc__enhansment__suite,,1,0,0,0
