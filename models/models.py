@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 class issues(models.Model):
-    _name = issues
+    _name = dlc.issues
 
     issue_id = fields.Many2one("issue.types", required=True)
     dlc_id = fields.Many2one("dlcs", required=True)

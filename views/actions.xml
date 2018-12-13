@@ -5,7 +5,7 @@
 
     <record model="ir.actions.act_window" id="action_dlc_issues">
         <field name="name">Issues</field>
-        <field name="res_model">issues</field>
+        <field name="res_model">dlc.issues</field>
         <field name="view_mode">tree,form</field>
     </record>
 
