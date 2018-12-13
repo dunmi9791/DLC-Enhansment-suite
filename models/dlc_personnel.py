@@ -3,8 +3,8 @@
 from odoo import models, fields, api
 
 
-class DLCs(models.Model):
-    _name = dlc.pesonnel
+class Dlcpersonnel(models.Model):
+    _name = dlc.personnel
 
     name = fields.Char
     email = fields.Char

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="DLC Enhancement Suite" id="dlc_root_menu"/>
+
+    <record model="ir.actions.act_window" id="action_dlc_issues">
+        <field name="name">Issues</field>
+        <field name="res_model">issues</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_dashboard">
+        <field name="name">Dashboard</field>
+        <field name="res_model">dlc.dashboard</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_customer">
+        <field name="name">Customers</field>
+        <field name="res_model">dlc.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_production">
+        <field name="name">Production</field>
+        <field name="res_model">dlc.production</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_dlcs">
+        <field name="name">Dlcs</field>
+        <field name="res_model">dlc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_states">
+        <field name="name">States</field>
+        <field name="res_model">states</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_lga">
+        <field name="name">Lga</field>
+        <field name="res_model">lga</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_issuetypes">
+        <field name="name">IssueTypes</field>
+        <field name="res_model">issues.types</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_personnel">
+        <field name="name">Personnel</field>
+        <field name="res_model">dlc.personnel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+
+
+    <menuitem name="Issues" id="dlc_issues_menu" parent="dlc_root_menu"
+              sequence="1" action="action_dlc_issues"/>
+
+    <menuitem name="Dashboard" id="dlc_dashboard_menu" parent="dlc_root_menu"
+              sequence="2" action="action_dlc_dashboard"/>
+
+    <menuitem name="Manage Customers" id="dlc_customer_menu" parent="dlc_root_menu"
+              sequence="3" action="action_dlc_customer"/>
+
+    <menuitem name="Production" id="dlc_production_menu" parent="dlc_root_menu"
+              sequence="4" action="action_dlc_production"/>
+
+    <menuitem name="Settings" id="dlc_settings_menu" parent="dlc_root_menu"
+              sequence="5" />
+
+    <menuitem name="Dlcs" id="dlc_dlcs_menu" parent="dlc_settings_menu"
+              sequence="1" action="action_dlc_dlcs"/>
+
+    <menuitem name="States" id="dlc_states_menu" parent="dlc_settings_menu"
+              sequence="2" action="action_dlc_states"/>
+
+    <menuitem name="Lgas" id="dlc_lga_menu" parent="dlc_settings_menu"
+              sequence="3" action="action_dlc_lga"/>
+
+    <menuitem name="IssueTypes" id="dlc_issuetypes_menu" parent="dlc_settings_menu"
+              sequence="4" action="action_dlc_issuetypes"/>
+
+    <menuitem name="Personnel" id="dlc_personnel_menu" parent="dlc_settings_menu"
+              sequence="5" action="action_dlc_personnel"/>
+
+
+
+
+</odoo>

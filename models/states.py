@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class DLCs(models.Model):
+class States(models.Model):
     _name = states
 
     name = fields.Char
