@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class DLCs(models.Model):
-    _name = dlc
+    _name = 'dlc'
 
     name = fields.Char
     dlc_operator = fields.Many2one('dlc.personnel')

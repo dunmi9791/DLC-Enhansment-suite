@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class Customers(models.Model):
-    _name = dlc.customers
+    _name = 'dlc.customers'
 
     name = fields.Char
     first_name = fields.Char

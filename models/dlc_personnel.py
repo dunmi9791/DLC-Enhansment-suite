@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class Dlcpersonnel(models.Model):
-    _name = dlc.personnel
+    _name = 'dlc.personnel'
 
     name = fields.Char
     email = fields.Char
