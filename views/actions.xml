@@ -11,7 +11,7 @@
 
     <record model="ir.actions.act_window" id="action_dlc_customer">
         <field name="name">Customers</field>
-        <field name="res_model">dlc.customer</field>
+        <field name="res_model">dlc.customers</field>
         <field name="view_mode">tree,form</field>
     </record>
 
