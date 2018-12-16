@@ -15,8 +15,9 @@ class issues(models.Model):
     ], default='open')
     date_resolved = fields.Date('Date Resolved')
 
-class dlcs(models.Model):
+class DlcDlcs(models.Model):
     _name = 'dlc.dlcs'
+    _description = 'list of dlsc '
 
     name = fields.Char()
     dlc_operator = fields.Many2one('dlc.personnel')
