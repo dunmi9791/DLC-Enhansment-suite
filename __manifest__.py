@@ -3,14 +3,13 @@
     'name': "DLC_Enhansment_Suite",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        An app design for the management of DLC issues""",
 
     'description': """
-        Long description of module's purpose
+        The purpose of this app is to manage data from issues emarnating from DLCs 
     """,
 
-    'author': "Sceteur Network Solutions",
+    'author': "Secteur Network Solutions",
     'website': "http://www.secteurnetworks.com",
 
     # Categories can be used to filter modules in modules listing
