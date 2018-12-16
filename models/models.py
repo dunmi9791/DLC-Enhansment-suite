@@ -15,7 +15,7 @@ class issues(models.Model):
     ], default='open')
     date_resolved = fields.Date('Date Resolved')
 
-class Dlcs(models.Model):
+class dlcs(models.Model):
     _name = 'dlc.dlcs'
 
     name = fields.Char()
