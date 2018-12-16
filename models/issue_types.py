@@ -10,3 +10,6 @@ class Types(models.Model):
     report_recipient = fields.Char
     resolution_recipient = fields.Char
 
+class DlcCustomers(models.Model):
+    _name = 'dlc.customers'
+
