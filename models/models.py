@@ -15,18 +15,6 @@ class issues(models.Model):
     ], default='open')
     date_resolved = fields.Date('Date Resolved')
 
-class DlcDlcs(models.Model):
-    _name = 'dlc.dlcs'
-    _description = 'list of dlsc '
-
-    name = fields.Char()
-    dlc_operator = fields.Many2one('dlc.personnel')
-    dlc_operator2 = fields.Many2one('dlc.personnel')
-    lga = fields.Many2one('lga')
-    state = fields.Many2one('states')
-    dlc_supervisor = fields.Many2one('dlc.personnel')
-
-
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 
