@@ -32,4 +32,8 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'css': [],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }
