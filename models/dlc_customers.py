@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class Customers(models.Model):
+class DlcCustomers(models.Model):
     _name = 'dlc.customers'
 
     name = fields.Char('Name')
