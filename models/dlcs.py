@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class DLCs(models.Model):
+class Dlcs(models.Model):
     _name = 'dlc'
 
     name = fields.Char
@@ -12,5 +12,3 @@ class DLCs(models.Model):
     lga = fields.Many2one('lga')
     state = fields.Many2one('states')
     dlc_supervisor = fields.Many2one('dlc.personnel')
-
-
