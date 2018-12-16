@@ -10,4 +10,4 @@ class DlcCustomers(models.Model):
     first_name = fields.Char('First Name')
     last_name = fields.Char('Last Name')
     date_of_birth = fields.Date('DOB')
-    expiry_date = fields.Date('Expiry')
+    expiry_date = fields.Date
