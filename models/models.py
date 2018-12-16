@@ -6,7 +6,7 @@ class issues(models.Model):
     _name = 'dlc.issues'
 
     issue_id = fields.Many2one("issue.types", required=True)
-    dlc_id = fields.Many2one("dlcs", required=True)
+    dlc_id = fields.Many2one("dlc.dlcs", required=True)
     dlc_status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')])
     date_report = fields.Date('Date Reported')
     resolution_status = fields.Selection([
