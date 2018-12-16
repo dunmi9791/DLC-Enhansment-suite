@@ -6,4 +6,4 @@
 from . import models
 from . import controllers
 from . import models
-from .models import dlc_customers
+from . import dlc_customers
