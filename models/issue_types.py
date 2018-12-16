@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 
 class Types(models.Model):
-    _name = 'issues.types'
+    _name = 'issues.typeser'
 
     name = fields.Char('Issue Type')
     report_recipient = fields.Char
