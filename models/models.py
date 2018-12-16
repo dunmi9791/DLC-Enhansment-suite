@@ -20,7 +20,7 @@ class Dlcs(models.Model):
 
     name = fields.Char()
     dlc_operator = fields.Many2one('dlc.personnel')
-    dlc_operator2 = fields.Manay2one('dlc.personnel')
+    dlc_operator2 = fields.Many2one('dlc.personnel')
     lga = fields.Many2one('lga')
     state = fields.Many2one('states')
     dlc_supervisor = fields.Many2one('dlc.personnel')
