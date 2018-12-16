@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "DLC_Enhansment_Suite",
+    'name': "DLC Enhansment Suite",
 
     'summary': """
         An app design for the management of DLC issues""",
