@@ -23,7 +23,7 @@
               sequence="1" action="action_dlc_issues"/>
 
     <menuitem name="Manage Customers" id="dlc_customer_menu" parent="dlc_root_menu"
-              sequence="3" action="action_dlc_customer"/>
+              sequence="2" action="action_dlc_customer"/>
 
 
 
