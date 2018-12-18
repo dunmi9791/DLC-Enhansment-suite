@@ -15,6 +15,18 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+     <record model="ir.actions.act_window" id="action_dlc_dashboard">
+        <field name="name">Dashboard</field>
+        <field name="res_model">dlc.dashboard</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_production">
+        <field name="name">Production</field>
+        <field name="res_model">dlc.production</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
 
 
@@ -24,6 +36,12 @@
 
     <menuitem name="Manage Customers" id="dlc_customer_menu" parent="dlc_root_menu"
               sequence="2" action="action_dlc_customer"/>
+
+    <menuitem name="Dashboard" id="dlc_dashboard_menu" parent="dlc_root_menu"
+              sequence="3" action="action_dlc_dashboard"/>
+
+    <menuitem name="Production Data" id="dlc_production_menu" parent="dlc_root_menu"
+              sequence="4" action="action_dlc_production"/>
 
 
 
