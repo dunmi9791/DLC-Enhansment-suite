@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_dlc__enhansment__suite_dlc__enhansment__suite,dlc__enhansment__suite,dlc__enhansment__suite.model_dlc_issues
-,base.group_erp_manager,1,1,1,1
+access_dlc__enhansment_suite,dlc__enhansment__suite,model_dlc_issues,,1,1,1,1
