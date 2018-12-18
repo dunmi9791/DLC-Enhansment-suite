@@ -27,6 +27,12 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+     <record model="ir.actions.act_window" id="action_dlc_dlcs">
+        <field name="name">Dlcs</field>
+        <field name="res_model">dlc.workstation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
 
 
@@ -42,6 +48,15 @@
 
     <menuitem name="Production Data" id="dlc_production_menu" parent="dlc_root_menu"
               sequence="4" action="action_dlc_production"/>
+
+    <menuitem name="Settings" id="dlc_settings_menu" parent="dlc_root_menu"
+              sequence="5"/>
+
+    <menuitem name="DLCs" id="dlc_settings_menu" parent="dlc_settings_menu"
+              sequence="5" action="action_dlc_dlcs"/>
+
+
+
 
 
 
