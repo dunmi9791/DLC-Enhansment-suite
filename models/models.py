@@ -22,6 +22,12 @@ class DlcCustomers(models.Model):
 
     name = fields.Char("Name")
 
+class DashBoard(models.Model):
+    _name = 'dlc.dashboard'
+    _description = 'fields for the dash board'
+
+    name = fields.Char()
+
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 
