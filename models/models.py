@@ -15,18 +15,7 @@ class issues(models.Model):
         ('resolved', 'Resolved')
     ], default='open')
     date_resolved = fields.Date('Date Resolved')
-
-class DlcCustomers(models.Model):
-    _name = 'dlc.customers'
-    _description = 'dlc customers'
-
-    name = fields.Char("Name")
-
-class DashBoard(models.Model):
-    _name = 'dlc.dashboard'
-    _description = 'fields for the dash board'
-
-    name = fields.Char()
+    notes = fields.Text('Notes')
 
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
