@@ -7,5 +7,5 @@ class Types(models.Model):
     _name = 'issues.types'
 
     name = fields.Char('Issue Type')
-    report_recipient = fields.Char()
-    resolution_recipient = fields.Char()
+    report = fields.Char()
+    resolution = fields.Char()
