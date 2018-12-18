@@ -17,6 +17,10 @@ class issues(models.Model):
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
 
+    @api.multi
+    def resolve_issue(self):
+        self.resolution_status = 'resolved'
+
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 

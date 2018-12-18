@@ -1,5 +1,43 @@
 <odoo>
   <data>
+    <record id="view_dlc_issues_form" model="ir.ui.view">
+        <field name="name">view.dlc.issues.form</field>
+        <field name="model">dlc.issues</field>
+        <field name="arch" type="xml">
+          <form name="DLC Issues Form">
+              <header>
+                  <button name="resolve_issue" string="Resolve" class="oe_highlight" states="open" type="object"/>
+
+
+                  <field name="resolution_status" widget="statusbar" statusbar_visible="open,resolved"/>
+              </header>
+            <sheet>
+              <div class="oe_title">
+                  <label for="issue_id" class="oe_edit_only"/>
+                  <h1>
+                      <field name="issue_id" />
+                  </h1>
+              </div>
+              <group>
+                  <group>
+                      <field name="dlc_id"/>
+                      <field name="dls_status"/>
+                  </group>
+                  <group>
+                      <field name="date_report"/>
+                      <field name="notes"/>
+                  </group>
+              </group>
+            </sheet>
+              <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </form>
+
+        </field>
+      </record>
+
     <!-- explicit list view definition -->
     <!--
     <record model="ir.ui.view" id="dlc__enhansment__suite.list">
