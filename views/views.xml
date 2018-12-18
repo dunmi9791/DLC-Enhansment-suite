@@ -21,7 +21,7 @@
               <group>
                   <group>
                       <field name="dlc_id"/>
-                      <field name="dls_status"/>
+                      <field name="dlc_status"/>
                   </group>
                   <group>
                       <field name="date_report"/>
