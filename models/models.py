@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class issues(models.Model):
     _name = 'dlc.issues'
+    _description = 'dlc issues'
 
     issue_id = fields.Many2one("issue.types", required=True)
     dlc_id = fields.Many2one("dlc.workstation", required=True)
