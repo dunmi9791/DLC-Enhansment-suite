@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class issues(models.Model):
     _name = 'dlc.issues'
     _description = 'dlc issues'
+    _inherit = ['mail.thread']
 
     issue_id = fields.Many2one("issues.types", required=True)
     dlc_id = fields.Many2one("dlc.workstation", required=True)
@@ -13,7 +14,7 @@ class issues(models.Model):
     resolution_status = fields.Selection([
         ('open', 'Open'),
         ('resolved', 'Resolved')
-    ], default='open')
+    ], default='open',track_visibility= 'onchange',)
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
 
