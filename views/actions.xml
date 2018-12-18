@@ -53,7 +53,7 @@
               sequence="5"/>
 
     <menuitem name="DLCs" id="dlc_settings_menu" parent="dlc_settings_menu"
-              sequence="5" action="action_dlc_dlcs"/>
+              sequence="6" action="action_dlc_dlcs"/>
 
 
 
