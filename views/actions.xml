@@ -33,6 +33,30 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="action_dlc_states">
+        <field name="name">States</field>
+        <field name="res_model">dlc.states</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_lga">
+        <field name="name">Lga</field>
+        <field name="res_model">dlc.lga</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_types">
+        <field name="name">Issue Types</field>
+        <field name="res_model">issues.types</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_personnel">
+        <field name="name">Personnel</field>
+        <field name="res_model">dlc.personnel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
 
 
@@ -54,6 +78,18 @@
 
     <menuitem name="DLCs" id="dlc_settings_dlcs_menu" parent="dlc_settings_menu"
               sequence="6" action="action_dlc_dlcs"/>
+
+    <menuitem name="States" id="dlc_settings_states_menu" parent="dlc_settings_menu"
+              sequence="7" action="action_dlc_states"/>
+
+    <menuitem name="LGA" id="dlc_settings_lga_menu" parent="dlc_settings_menu"
+              sequence="8" action="action_dlc_lga"/>
+
+    <menuitem name="Issue types" id="dlc_settings_types_menu" parent="dlc_settings_menu"
+              sequence="9" action="action_dlc_types"/>
+
+    <menuitem name="Personnel" id="dlc_settings_personnel_menu" parent="dlc_settings_menu"
+              sequence="10" action="action_dlc_personnel"/>
 
 
 
