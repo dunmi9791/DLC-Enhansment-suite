@@ -7,4 +7,4 @@ class Lga(models.Model):
     _name = 'dlc.lga'
 
     name = fields.Char('name')
-    state = fields.Many2one('states')
+    state = fields.Many2one('dlc.states')

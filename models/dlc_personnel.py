@@ -8,7 +8,7 @@ class Dlcpersonnel(models.Model):
 
     name = fields.Char()
     email = fields.Char()
-    dlc_id = fields.Many2one('dlc')
+    dlc_id = fields.Many2one('dlc.workstation')
     phone = fields.Char()
     supervisor = fields.Boolean()
     first_name = fields.Char()
