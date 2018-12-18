@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
           <form name="DLC Issues Form">
               <header>
-                  <button name="resolve_issue" string="Resolve" class="oe_highlight" states="open" type="object"/>
+                  <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="open" type="object"/>
 
 
                   <field name="resolution_status" widget="statusbar" statusbar_visible="open,resolved"/>
