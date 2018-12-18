@@ -16,6 +16,12 @@ class issues(models.Model):
     ], default='open')
     date_resolved = fields.Date('Date Resolved')
 
+class DlcCustomers(models.Model):
+    _name = 'dlc.customers'
+    _description = 'dlc customers'
+
+    name = fields.Char("Name")
+
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 
