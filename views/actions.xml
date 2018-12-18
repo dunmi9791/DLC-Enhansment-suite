@@ -52,7 +52,7 @@
     <menuitem name="Settings" id="dlc_settings_menu" parent="dlc_root_menu"
               sequence="5"/>
 
-    <menuitem name="DLCs" id="dlc_settings_menu" parent="dlc_settings_menu"
+    <menuitem name="DLCs" id="dlc_settings_dlcs_menu" parent="dlc_settings_menu"
               sequence="6" action="action_dlc_dlcs"/>
 
 
