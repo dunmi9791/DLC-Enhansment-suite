@@ -39,18 +39,8 @@
                   <div class="o_kanban_card_manage_title">
                 <span>View</span>
                 </div>
-             <div>
-                   <a name="%(dashboard_sales_action_id)d" type="action">Unresolved Issues</a>
-                 </div>
-                 <div>
-                   <a name="%(dashboard_sales_order_action_id)d" type="action">Sales Order</a>
-                 </div>
-                <div>
-                  <a name="%(dashboard_sales_done_action_id)d" type="action">Done</a>
-                </div>
-                <div>
-                   <a name="%(dashboard_sales_cancel_action_id)d" type="action">Cancel</a>
-                     </div>
+
+
                </div>
                 <div t-if="widget.editable" class="o_project_kanban_colorpicker" >
                      <ul class="oe_kanban_colorpicker" data-field="color"/>
