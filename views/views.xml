@@ -6,21 +6,22 @@
         <field name="arch" type="xml">
           <form name="DLC Issues Form">
               <header>
-                  <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="open" type="object"/>
+                  <button name="report_issue" string="Report" class="oe_highlight" resolution_status="open" type="object"/>
+                  <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="reported" type="object"/>
 
 
-                  <field name="resolution_status" widget="statusbar" statusbar_visible="open,resolved"/>
+                  <field name="resolution_status" widget="statusbar" statusbar_visible="open,reported,resolved"/>
               </header>
             <sheet>
               <div class="oe_title">
                   <label for="issue_id" class="oe_edit_only"/>
                   <h1>
-                      <field name="issue_id" />
+                      <field name="dlc_id" />
                   </h1>
               </div>
               <group>
                   <group>
-                      <field name="dlc_id"/>
+                      <field name="issue_id"/>
                       <field name="dlc_status"/>
                   </group>
                   <group>

@@ -13,10 +13,15 @@ class issues(models.Model):
     date_report = fields.Date('Date Reported')
     resolution_status = fields.Selection([
         ('open', 'Open'),
+        ('reported', 'Reported')
         ('resolved', 'Resolved')
     ], default='open',track_visibility= 'onchange',)
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
+
+    @api.multi
+    def report_issue(self):
+        self.resolution_status = 'reported'
 
     @api.multi
     def resolve_issue(self):
