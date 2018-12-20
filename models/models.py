@@ -18,6 +18,8 @@ class issues(models.Model):
     ], default='open',track_visibility='onchange',)
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
+    open_issues = fields.Integer(compute='open')
+
 
     @api.multi
     def report_issue(self):
@@ -26,6 +28,11 @@ class issues(models.Model):
     @api.multi
     def resolve_issue(self):
         self.resolution_status = 'resolved'
+
+    @api.multi
+    def open(self):
+        count = self.env['dlc.issues.resolution_status'].search_count([('resolution_status','=','open')])
+        self.open_issues = count
 
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
