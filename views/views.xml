@@ -14,7 +14,7 @@
               </header>
             <sheet>
               <div class="oe_title">
-                  <label for="issue_id" class="oe_edit_only"/>
+                  <label for="dlc_id" class="oe_edit_only"/>
                   <h1>
                       <field name="dlc_id" />
                   </h1>
