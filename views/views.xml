@@ -39,6 +39,30 @@
         </field>
       </record>
 
+      <record model="ir.ui.view" id="view_resolved_graph_value">
+
+        <field name="name">resolved.reported.graph</field>
+
+        <field name="model">dlc.issues</field>
+
+        <field eval="12" name="priority"/>
+
+        <field name="arch" type="xml">
+
+            <graph string="Unresolved Issues" type="pie">
+
+
+
+                <field name="open_issues" type="measure"/>
+
+
+
+            </graph>
+
+        </field>
+
+    </record>
+
     <!-- explicit list view definition -->
     <!--
     <record model="ir.ui.view" id="dlc__enhansment__suite.list">
