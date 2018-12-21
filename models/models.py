@@ -31,7 +31,7 @@ class issues(models.Model):
 
     @api.multi
     def open(self):
-        count = self.env['dlc.issues.resolution_status'].search_count([('resolution_status','=','open')])
+        count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
         self.open_issues = count
 
 # class dlc__enhansment__suite(models.Model):
