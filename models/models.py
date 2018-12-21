@@ -18,7 +18,7 @@ class issues(models.Model):
     ], default='open',track_visibility='onchange',)
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
-    open_issues = fields.Integer(compute='open')
+    open_issues = fields.Integer(compute='open',store=True)
 
 
     @api.multi
