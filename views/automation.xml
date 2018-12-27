@@ -3,7 +3,7 @@
   <data noupdate="0">
     <record id="sendmail_server_action" model="ir.actions.server">
       <field name="name">Sendmail Server Action</field>
-      <field name="model_id" ref="product.model_model_model"/>
+      <field name="model_id" ref="dlc__enhansment__suite.model_dlc_issues"/>
       <field name="state">code</field>
       <field name="code">action = env["dlc.issues"].sendmail_action_method()</field>
     </record>
