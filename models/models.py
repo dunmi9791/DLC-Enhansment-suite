@@ -41,10 +41,9 @@ class issues(models.Model):
          active_ids = self._context.get('active_ids')
          for active_id in active_ids:
              self.env['dlc.issues'].browse(active_id).name = 'name'
-     return True
+    return True
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
-
 #     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
