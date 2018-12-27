@@ -27,7 +27,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/actions.xml',
-        'views/dashboard_view.xml'
+        'views/dashboard_view.xml',
+        'views/automation.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
