@@ -30,10 +30,10 @@ class issues(models.Model):
         self.resolution_status = 'resolved'
 
     @api.multi
+    @api.depends('resolution_status')
     def open(self):
         count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
         self.open_issues = count
-
 
 
     @api.model
