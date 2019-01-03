@@ -53,7 +53,8 @@
 
 
 
-                <field name="resolution_status" type="measure"/>
+                <field name="resolution_status" type="col"/>
+                <field name="issue_id" type="row" />
 
 
 
