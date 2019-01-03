@@ -65,7 +65,19 @@
         <field name="context">{}</field>
         <field name="view_mode">tree,form,kanban</field>
     </record>
-
+    <record id="action_dlc_providers" model="ir.actions.act_window">
+        <field name="name">Service Providers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">service.providers</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+          </p>
+        </field>
+    </record>
 
 
 
@@ -102,7 +114,8 @@
 
     <menuitem name="Dashboard" id="child_dashboard_menu" parent="dlc_dashboard_menu"
               sequence="3" action="dlc_dashboard_action"/>
-
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="dlc_settings_provider_menu" name="Service Providers" parent="dlc_settings_menu" action="action_dlc_providers" sequence="11"/>
 
 
 
