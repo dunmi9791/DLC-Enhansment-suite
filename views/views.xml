@@ -53,7 +53,7 @@
 
 
 
-                <field name="open_issues" type="measure"/>
+                <field name="resolution_status" type="measure"/>
 
 
 
