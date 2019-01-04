@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <record id="dlcs_tree_view" model="ir.ui.view">
-            <field name="dlcs.tree"></field>
-            <field name="dlc.workstation"></field>
+            <field name="name">dlc.tree</field>
+            <field name="model">dlc.workstation</field>
             <field name="arch" type="xml">
                 <tree string="DLC Workstations">
                     <field name="name"/>
