@@ -19,6 +19,7 @@ class issues(models.Model):
     date_resolved = fields.Date('Date Resolved')
     notes = fields.Text('Notes')
     open_issues = fields.Integer(compute='open',store=True)
+    status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')], related="dlc_id.status")
 
 
     @api.multi
@@ -35,13 +36,12 @@ class issues(models.Model):
         count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
         self.open_issues = count
 
-    @api.multi
-    def status_changeactive(self):
-        self.dlc_id.status = 'active'
-
-    @api.multi
+    @api.onchange('dlc_status')
     def status_changeinactive(self):
-        self.dlc_id.status = 'inactive'
+        if self.dlc_status == "inactive"
+            self.status = 'inactive'
+
+
 
 
     @api.model
