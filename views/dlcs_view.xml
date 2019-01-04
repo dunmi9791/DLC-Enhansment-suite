@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dlcs_tree_view" model="ir.ui.view">
+            <field name="dlcs.tree"></field>
+            <field name="dlc.workstation"></field>
+            <field name="arch" type="xml">
+                <tree string="DLC Workstations">
+                    <field name="name"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

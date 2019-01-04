@@ -35,6 +35,14 @@ class issues(models.Model):
         count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
         self.open_issues = count
 
+    @api.multi
+    def status_changeactive(self):
+        self.dlc_id.status = 'active'
+
+    @api.multi
+    def status_changeinactive(self):
+        self.dlc_id.status = 'inactive'
+
 
     @api.model
     def sendmail_action_method(self):

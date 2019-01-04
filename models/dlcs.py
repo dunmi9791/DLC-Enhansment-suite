@@ -13,3 +13,4 @@ class WorkStation(models.Model):
     state = fields.Many2one('dlc.states')
     dlc_supervisor = fields.Many2one('dlc.personnel')
     issues_ids = fields.One2many(comodel_name="dlc.issues", inverse_name="dlc_id", string="Issues", required=False, )
+    status = fields.Selection(string="DLC Status", selection=[('active', 'Active'), ('inactive', 'Inactive'), ], required=False, default= 'active' )
