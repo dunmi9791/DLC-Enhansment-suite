@@ -42,7 +42,7 @@ class issues(models.Model):
         if self.dlc_status == "inactive":
             status = self.env['dlc.workstation'].search[('id', '=', self.dlc_id)]
 
-            status.status = 'inactive'
+            status.status = inactive
 
 
 
