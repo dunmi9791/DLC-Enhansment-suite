@@ -38,13 +38,13 @@ class Issues(models.Model):
         self.open_issues = count
 
 
-    @api.multi
+    @api.model
     def write(self, values):
-        form_id = values['dlc_id'].id
-        form_obj = self.env['dlc.workstation'].browse([form_id])
+        dlc_id = values['dlc_id'].id
+        dlc_obj = self.env['dlc.workstation'].browse([dlc_id])
 
         if self.dlc_status == "inactive":
-            form_obj.write({'status': 'inactive'})
+            dlc_obj.write({'status': 'inactive'})
         return super(Issues, self).write(values)
 
 
