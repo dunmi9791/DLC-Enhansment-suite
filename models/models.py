@@ -22,6 +22,7 @@ class issues(models.Model):
     status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')], related="dlc_id.status")
 
 
+
     @api.multi
     def report_issue(self):
         self.resolution_status = 'reported'
@@ -39,7 +40,10 @@ class issues(models.Model):
     @api.onchange('dlc_status')
     def status_changeinactive(self):
         if self.dlc_status == "inactive":
-            self.status = 'inactive'
+            status = self.env['dlc.workstation'].search[('id', '=', self.dlc_id)]
+
+            status.status = 'inactive'
+
 
 
 
