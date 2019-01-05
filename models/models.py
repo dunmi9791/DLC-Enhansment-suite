@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 
-class issues(models.Model):
+class Issues(models.Model):
     _name = 'dlc.issues'
     _description = 'dlc issues'
     _inherit = ['mail.thread']
@@ -37,10 +37,15 @@ class issues(models.Model):
         count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
         self.open_issues = count
 
-    @api.onchange('dlc_status')
-    def status_changeinactive(self):
+
+    @api.multi
+    def write(self, values):
+        form_id = values['dlc_id']
+        form_obj = self.env['dlc.workstation'].browse([form_id])
+
         if self.dlc_status == "inactive":
-            self._origin.dlc_id.status = 'inactive'
+            form_obj.write({'status': 'inactive'})
+        return super(Issues, self).write(values)
 
 
 
