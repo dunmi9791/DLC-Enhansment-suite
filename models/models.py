@@ -40,9 +40,8 @@ class issues(models.Model):
     @api.onchange('dlc_status')
     def status_changeinactive(self):
         if self.dlc_status == "inactive":
-            status = self.env['dlc.workstation'].search[('id', '=', self.dlc_id.id)]
+            self._origin.dlc_id.status = 'inactive'
 
-            status.status = 'inactive'
 
 
 
