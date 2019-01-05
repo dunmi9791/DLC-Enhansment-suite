@@ -40,7 +40,7 @@ class Issues(models.Model):
 
     @api.multi
     def write(self, values):
-        form_id = values['dlc_id']
+        form_id = values['dlc_id'].id
         form_obj = self.env['dlc.workstation'].browse([form_id])
 
         if self.dlc_status == "inactive":
