@@ -40,13 +40,11 @@ class Issues(models.Model):
 
     @api.multi
     def write(self, values):
-        dlc_id = values['dlc_id'].id
-        dlc_obj = self.env['dlc.workstation'].browse([dlc_id])
-
-        if self.dlc_status == "inactive":
-            self.dlc_obj.status = 'inactive'
+        if values['dlc_id']:
+            dlc_obj = self.env['dlc.workstation'].browse(values['dlc_id'])
+            if self.dlc_status == "inactive":
+                dlc_obj.write({'status': values['inactive']})
         return super(Issues, self).write(values)
-
 
 
 
