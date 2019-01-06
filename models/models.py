@@ -23,6 +23,7 @@ class Issues(models.Model):
 
 
 
+
     @api.multi
     def report_issue(self):
         self.resolution_status = 'reported'
@@ -40,10 +41,13 @@ class Issues(models.Model):
 
     @api.multi
     def write(self, values):
-        dlc_id = self.dlc_id
-        dlc_obj = self.env['dlc.workstation'].browse(values[dlc_id])
-        if self.dlc_status == "inactive":
-            dlc_obj.write({'status': values['inactive']})
+        self.ensure_one()
+        value = {}
+        #value['id'] = self.dlc_id.id
+        if 'dlc_status' in values:
+            value['status'] = values['dlc_status']
+            dlc_obj = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
+            dlc_obj.write(value)
             return super(Issues, self).write(values)
 
 
