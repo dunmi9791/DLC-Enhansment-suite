@@ -53,13 +53,15 @@ class Issues(models.Model):
     @api.model
     def create(self, values):
         valuep = {}
-        valuep['status'] = values['dlc_status']
-        prd = self.env['dlc.workstation'].write(valuep)
-        self.dlc_id.id = prd.id
-        new_record = super(Issues, self).create(values)
+        if 'dlc_id' in values:
+            values.get('dlc_id')
+            valuep['status'] = values['dlc_status']
+            prd = self.env['dlc.workstation'].write(valuep)
+            values['dlc_id'] = prd.id
+            new_record = super(Issues, self).create(values)
 
-        # Add code here
-        return new_record
+            # Add code here
+            return new_record
 
 
 
