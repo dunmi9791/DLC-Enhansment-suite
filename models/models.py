@@ -53,6 +53,7 @@ class Issues(models.Model):
     @api.model
     def create(self, values):
         valuep = {}
+        valuep['id'] = self.dlc_id.id
         if values['dlc_status'] == 'inactive':
             valuep['status'] = values['dlc_status']
             values.get('dlc_id')
