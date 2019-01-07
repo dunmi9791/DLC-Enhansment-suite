@@ -50,7 +50,14 @@ class Issues(models.Model):
             dlc_obj.write(value)
             return super(Issues, self).write(values)
 
-
+    @api.model
+    def create(self, values):
+        valuep = {}
+        valuep['status'] = values['dlc_status']
+        prd = self.env['dlc.workstation'].create(valuep)
+        values['dlc_id'] = prd.id
+        # Add code here
+        return super(Issues, self).create(values)
 
 
 
