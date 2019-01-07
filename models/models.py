@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from datetime import datetime, time
 
 class Issues(models.Model):
     _name = 'dlc.issues'
@@ -32,6 +33,7 @@ class Issues(models.Model):
     def resolve_issue(self):
         self.resolution_status = 'resolved'
         self.dlc_status = 'active'
+        self.date_resolved = datetime.today()
 
     @api.multi
     @api.depends('resolution_status')

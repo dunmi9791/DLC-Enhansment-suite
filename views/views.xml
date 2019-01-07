@@ -74,6 +74,7 @@
                     <field name="dlc_status"/>
                     <field name="date_report"/>
                     <field name="resolution_status"/>
+                    <field name="date_resolved"/>
                 </tree>
             </field>
         </record>
