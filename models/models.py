@@ -33,7 +33,7 @@ class Issues(models.Model):
     def resolve_issue(self):
         self.resolution_status = 'resolved'
         self.dlc_status = 'active'
-        self.date_resolved = datetime.today().strftime('%y-%m-%d')
+        self.date_resolved = datetime.today().strftime('%m-%d-%y')
 
     @api.multi
     @api.depends('resolution_status')
