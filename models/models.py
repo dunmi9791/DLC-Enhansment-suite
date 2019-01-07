@@ -31,6 +31,7 @@ class Issues(models.Model):
     @api.multi
     def resolve_issue(self):
         self.resolution_status = 'resolved'
+        self.dlc_status = 'active'
 
     @api.multi
     @api.depends('resolution_status')
