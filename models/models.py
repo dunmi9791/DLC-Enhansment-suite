@@ -54,8 +54,8 @@ class Issues(models.Model):
     def create(self, values):
         valuep = {}
         valuep['status'] = values['dlc_status']
-        prd = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
-        prd.write(valuep)
+        prd = self.env['dlc.workstation'].write(valuep)
+        values['dlc_id'] = prd.id
         new_record = super(Issues, self).create(values)
 
         # Add code here
