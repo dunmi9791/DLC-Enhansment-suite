@@ -54,7 +54,7 @@ class Issues(models.Model):
     def create(self, values):
         valuep = {}
         if values['dlc_status'] == 'inactive':
-            values['dlc_status'] = valuep['status']
+            valuep['status'] = values['dlc_status']
             values.get('dlc_id')
             prd = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
             prd.write(valuep)
