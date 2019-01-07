@@ -58,6 +58,7 @@ class Issues(models.Model):
             dlcst['status'] = res.dlc_status
             dlc_st = self.env['dlc.workstation'].search([('id', '=', values.get('dlc_id'))])
             dlc_st.write(dlcst)
+        return res
 
 
 
