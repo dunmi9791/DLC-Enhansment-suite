@@ -52,17 +52,13 @@ class Issues(models.Model):
 
     @api.model
     def create(self, values):
-        valuep = {}
-        valuep['id'] = self.dlc_id.id
-        if values['dlc_status'] == 'inactive':
-            valuep['status'] = values['dlc_status']
-            values.get('dlc_id')
-            prd = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
-            prd.write(valuep)
-            new_record = super(Issues, self).create(values)
+        res = super(Issues, self).create(values)
+        dlcst = {}
+        if res.dlc_status == 'inactive':
+            dlcst['status'] = res.dlc_status
+            dlc_st = self.env['dlc.workstation'].search([('id', '=', values.get('dlc_id'))])
+            dlc_st.write(dlcst)
 
-            # Add code here
-            return new_record
 
 
 
