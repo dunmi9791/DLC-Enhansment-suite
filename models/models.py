@@ -17,7 +17,7 @@ class Issues(models.Model):
         ('reported', 'Reported'),
         ('resolved', 'Resolved')
     ], default='open',track_visibility='onchange',)
-    date_resolved = fields.Date('Date Resolved')
+    date_resolved = fields.Datetime('Date Resolved')
     notes = fields.Text('Notes')
     open_issues = fields.Integer(compute='open',store=True)
     status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')], related="dlc_id.status")
@@ -33,7 +33,7 @@ class Issues(models.Model):
     def resolve_issue(self):
         self.resolution_status = 'resolved'
         self.dlc_status = 'active'
-        self.date_resolved = datetime.today().strftime('%y-%m-%d')
+        self.date_resolved = datetime.today()
 
     @api.multi
     @api.depends('resolution_status')
