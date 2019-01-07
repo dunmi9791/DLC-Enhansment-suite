@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="issue_type_tree_view" model="ir.ui.view">
+            <field name="name">issuetype.tree.view</field>
+            <field name="model">issues.types</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="report_contact"/>
+                    <field name="resolution_contact"/>
+                </tree>
+            </field>
+        </record>
+        <record id="issue_type_form_view" model="ir.ui.view">
+            <field name="name">issuetype.form.view</field>
+            <field name="model">issues.types</field>
+            <field name="arch" type="xml">
+                <form string="Issue Type">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="report_contact"/>
+                            <field name="resolution_contact"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

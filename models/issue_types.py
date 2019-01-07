@@ -8,6 +8,6 @@ class Types(models.Model):
     _description = 'types of issues'
 
     name = fields.Char('Issue Type')
-    report_contact = fields.Char(string="Contact to Report", required=False,)
-    resolution_contact = fields.Char(string="Resolution Contact")
+    report_contact = fields.Char(string="Email of service provider", required=False,)
+    resolution_contact = fields.Char(string="Service provider mobile")
     provider = fields.Many2one(comodel_name="service.providers", string="Service Provider", required=False, )
