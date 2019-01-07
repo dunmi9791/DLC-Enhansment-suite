@@ -42,6 +42,7 @@ class Issues(models.Model):
 
     @api.multi
     def write(self, values):
+        res = super(Issues, self).write(values)
         self.ensure_one()
         value = {}
         #value['id'] = self.dlc_id.id
@@ -49,7 +50,7 @@ class Issues(models.Model):
             value['status'] = values['dlc_status']
             dlc_obj = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
             dlc_obj.write(value)
-            return super(Issues, self).write(values)
+        return res
 
     @api.model
     def create(self, values):
