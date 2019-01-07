@@ -53,10 +53,10 @@ class Issues(models.Model):
     @api.model
     def create(self, values):
         valuep = {}
-        if 'dlc_id' in values:
+        if values['dlc_status'] == 'inactive':
+            values['dlc_status'] = valuep['status']
             values.get('dlc_id')
-            valuep['status'] = values['dlc_status']
-            prd = self.env['dlc.workstation']
+            prd = self.env['dlc.workstation'].search([('id','=',self.dlc_id.id)])
             prd.write(valuep)
             new_record = super(Issues, self).create(values)
 
