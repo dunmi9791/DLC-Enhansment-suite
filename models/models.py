@@ -55,7 +55,7 @@ class Issues(models.Model):
         valuep = {}
         valuep['status'] = values['dlc_status']
         prd = self.env['dlc.workstation'].write(valuep)
-        values['dlc_id'] if values.get(dlc_id) else False = prd.id
+        values['dlc_id'] if values.get('dlc_id') else False = prd.id
         new_record = super(Issues, self).create(values)
 
         # Add code here
