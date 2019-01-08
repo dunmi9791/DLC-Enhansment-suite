@@ -31,7 +31,7 @@
         'views/automation.xml',
         'views/dlcs_view.xml',
         'views/issuetype_view.xml',
-        'data/automated_actions'
+        'data/automated_actions.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
