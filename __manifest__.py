@@ -31,7 +31,7 @@
         'views/automation.xml',
         'views/dlcs_view.xml',
         'views/issuetype_view.xml',
-        'data/ir.cron.csv'
+        'data/automated_actions'
     ],
     # only loaded in demonstration mode
     'demo': [
