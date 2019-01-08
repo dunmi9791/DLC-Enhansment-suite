@@ -8,8 +8,8 @@
             <field name="interval_type">days</field>
             <field name="numbercall">-1</field>
             <field name="doall">1</field>
-            <field name="model_id" eval="'dlc.customers'"/>
-            <field name="function" eval="'send_birthday_sms'"</field>
+            <field name="model_id" eval="'dlc.customers'" />
+            <field name="function" eval="'send_birthday_sms'" />
 
         </record>
 
