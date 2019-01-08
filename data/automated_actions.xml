@@ -8,8 +8,8 @@
             <field name="interval_type">hours</field>
             <field name="numbercall">-1</field>
             <field eval="False" name="doall"/>
-            <field eval="dlc.customers" name="model_id"/>
-            <field eval="send_birthday_sms" name="function"/>
+            <field name="model_id">dlc.customers</field>
+            <field name="function">send_birthday_sms</field>
 
         </record>
 
