@@ -12,3 +12,13 @@ class DlcCustomers(models.Model):
     expiry_date = fields.Date(string="Expiry Date", required=False, )
     mobile_number = fields.Char(string="Mobile Number", required=False, )
     email = fields.Char(string="Email", required=False, )
+
+
+
+
+    @api.model
+    def send_birthday_sms(self):
+        for birthday_custommer in self.env['dlc.customers'].search([('dob', '=', fields.Date.today())]):
+            birthday_sms_template = self.env['send_sms'].search([('name', '=', 'birthday_template')])
+            self.env['send_sms'].send_sms(birthday_sms_template.id, birthday_custommer.id)
+

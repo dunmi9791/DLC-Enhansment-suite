@@ -30,7 +30,8 @@
         'views/dashboard_view.xml',
         'views/automation.xml',
         'views/dlcs_view.xml',
-        'views/issuetype_view.xml'
+        'views/issuetype_view.xml',
+        'data/ir.cron.csv'
     ],
     # only loaded in demonstration mode
     'demo': [
