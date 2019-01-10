@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="production_tree_view" model="ir.ui.view">
+            <field name="name">Production Tree View</field>
+            <field name="model">dlc.production</field>
+            <field name="arch" type="xml">
+                <tree string="Production Data">
+                    <field name="date"/>
+                    <field name="workstation_id"/>
+                    <field name="card_type"/>
+                    <field name="cdl"/>
+                    <field name="gdl"/>
+                    <field name="msl"/>
+                    <field name="pdl"/>
+                    <field name="sdl"/>
+                    <field name="total"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

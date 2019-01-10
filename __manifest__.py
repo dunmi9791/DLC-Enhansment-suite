@@ -28,10 +28,10 @@
         'views/templates.xml',
         'views/actions.xml',
         'views/dashboard_view.xml',
-        'views/automation.xml',
         'views/dlcs_view.xml',
         'views/issuetype_view.xml',
-        'data/automated_actions.xml'
+        'data/automated_actions.xml',
+        'views/production_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
