@@ -21,8 +21,8 @@ class DlcCustomers(models.Model):
 
     @api.model
     def send_birthday_sms(self):
-        for birthday_custommer in self.env['dlc.customers'].search([('dob', '=', fields.Date.today())]):
-            _logger.error("Send birthday: " + str(birthday_custommer.name))
+        for birthday_customer in self.env['dlc.customers'].search([]):
+            _logger.error("Send birthday: " + str(birthday_customer.name))
             birthday_sms_template = self.env['send_sms'].search([('name', '=', 'birthday_template')])
-            self.env['send_sms'].send_sms(birthday_sms_template.id, birthday_custommer.id)
+            self.env['send_sms'].send_sms(birthday_sms_template.id, birthday_customer.id)
 
