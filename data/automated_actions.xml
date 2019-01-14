@@ -5,7 +5,7 @@
             <field name="name">Birthday SMS</field>
             <field name="model_id" ref="model_dlc_customers" />
             <field name="state">code</field>
-            <field name="code">model.send_birthday_sms</field>
+            <field name="code">model.send_birthday_sms()</field>
             <field name="user_id" ref="base.user_root"/>
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
@@ -46,6 +46,17 @@
             <field name="numbercall">-1</field>
             <field name="nextcall" eval="(DateTime.now() + relativedelta(days=1)).strftime('%Y-%m-%d 00:00:05')" />
             <field eval="False" name="doall" />
+        </record>
+        <record id="sms_birthday_wishes_customer_template" model="send_sms">
+            <field name="name">Birthday Wishes Template</field>
+            <field name="gateway_id">1</field>
+            <field name="model_id" ref="model_dlc_customers"/>
+            <field name="sms_to">${object.mobile_number}</field>
+            <field name="sms_html"><![CDATA[
+                Hello ${object.name} we at the FRSC would like to wish you a very happy birthday
+
+            ]]>
+            </field>
         </record>
 
 
