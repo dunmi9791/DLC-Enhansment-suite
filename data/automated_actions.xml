@@ -15,6 +15,39 @@
 
 
         </record>
+        <record id="email_birthday_wishes_customer_template" model="mail.template">
+            <field name="name">Birthday Wishes Template</field>
+            <field name="subject">Birthday Wishes ${object.name}</field>
+            <field name="email_from">${user.email|safe}</field>
+            <field name="email_to">${object.email|safe}</field>
+            <field name="model_id" ref="model_dlc_customers"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.name},</p>
+                <p>Date: ${object.birthday}</p>
+                <p>Happy Birthday..!</p>
+                <p>Wish You a very very Happy Birthday, ${object.name}.</p>
+                <p>Hope you have a great Year Ahead. Stay Healthy, Stay Happy.</p>
+                <p style="font-size: 12px;">
+                <br></br>
+                Wishes From : <strong>${user.company_id.name}</strong>
+                </p>
+            ]]>
+            </field>
+        </record>
+         <record id="ir_cron_birthday_wish" forcecreate="True" model="ir.cron">
+            <field name="name">Birthday Wishes Notification</field>
+            <field name="model_id" ref="model_dlc_customers"/>
+            <field name="state">code</field>
+            <field name="code">model.send_birthday_email()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + relativedelta(days=1)).strftime('%Y-%m-%d 00:00:05')" />
+            <field eval="False" name="doall" />
+        </record>
+
 
 
 
