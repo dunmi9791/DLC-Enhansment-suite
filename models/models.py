@@ -20,7 +20,8 @@ class Issues(models.Model):
     date_resolved = fields.Datetime('Date Resolved')
     notes = fields.Text('Notes')
     open_issues = fields.Integer(compute='open',store=True)
-    status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')], related="dlc_id.status")
+    back_color = fields.Integer('color Index', compute='_change_kanban_color')
+
 
 
 
@@ -38,7 +39,7 @@ class Issues(models.Model):
     @api.multi
     @api.depends('resolution_status')
     def open(self):
-        count = self.env['dlc.issues'].search_count([('resolution_status','=','open')])
+        count = self.env['dlc.issues'].search_count([('resolution_status', '=', 'open')])
         self.open_issues = count
 
 
@@ -72,7 +73,21 @@ class Issues(models.Model):
          active_ids = self._context.get('active_ids')
          for active_id in active_ids:
              self.env['dlc.issues'].browse(active_id).name = 'name'
-         return True 
+         return True
+
+    @api.one
+    def _change_kanban_color(self):
+        """
+        @api.depends() should contain all fields that will be used in the calculations.
+        """
+        for back in self:
+            if back.dlc_status and back.dlc_status == 'active':
+                self.back_color = 10
+            elif back.dlc_status == 'inactive':
+                self.back_color = 9
+            else:
+                back_color = 2
+                back.back_color = back_color
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 #     name = fields.Char()
