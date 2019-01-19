@@ -55,7 +55,7 @@
 
 
                 <field name="resolution_status" type="col"/>
-                <field name="issue_id" type="row" />
+
 
 
 
@@ -64,6 +64,55 @@
         </field>
 
     </record>
+      <record model="ir.ui.view" id="view_notable_graph_value">
+
+        <field name="name">notable.issues.graph</field>
+
+        <field name="model">dlc.issues</field>
+
+        <field eval="12" name="priority"/>
+
+        <field name="arch" type="xml">
+
+            <graph string="Notable Issues" type="pie">
+
+
+
+                <field name="issue_id" type="col"/>
+
+
+
+
+            </graph>
+
+        </field>
+
+    </record>
+      <record model="ir.ui.view" id="view_dlc_graph_value">
+
+        <field name="name">resolved.reported.graph</field>
+
+        <field name="model">dlc.issues</field>
+
+        <field eval="12" name="priority"/>
+
+        <field name="arch" type="xml">
+
+            <graph string="Issues by DLC" type="pie">
+
+
+
+                <field name="dlc_id" type="col"/>
+
+
+
+
+            </graph>
+
+        </field>
+
+    </record>
+
 
       <record id="view_dlc_issues_tree" model="ir.ui.view">
             <field name="name">view.dlc.issues.tree</field>

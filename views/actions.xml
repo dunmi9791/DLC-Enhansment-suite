@@ -6,7 +6,26 @@
     <record model="ir.actions.act_window" id="action_dlc_issues">
         <field name="name">Issues</field>
         <field name="res_model">dlc.issues</field>
-        <field name="view_mode">tree,form,graph,kanban</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_dlc_issues_graph">
+        <field name="name">Issues type</field>
+        <field name="res_model">dlc.issues</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_notable_graph_value"/>
+    </record>
+    <record model="ir.actions.act_window" id="action_dlc_issues_graph2">
+        <field name="name">Issues type</field>
+        <field name="res_model">dlc.issues</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_resolved_graph_value"/>
+    </record>
+    <record model="ir.actions.act_window" id="action_dlc_issues_graph3">
+        <field name="name">Issues type</field>
+        <field name="res_model">dlc.issues</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_dlc_graph_value"/>
     </record>
 
     <record model="ir.actions.act_window" id="action_dlc_customer">
@@ -78,11 +97,12 @@
     <menuitem name="Issues" id="dlc_issues_menu" parent="dlc_root_menu"
               sequence="1" action="action_dlc_issues"/>
 
+
     <menuitem name="Manage Customers" id="dlc_customer_menu" parent="dlc_root_menu"
               sequence="2" action="action_dlc_customer"/>
 
-    <menuitem name="Dashboard" id="dlc_dashboard_menu" parent="dlc_root_menu"
-              sequence="3" action="action_dlc_dashboard"/>
+    <menuitem name="Graphs" id="dlc_graph_menu" parent="dlc_root_menu"
+              sequence="3" />
 
     <menuitem name="Production Data" id="dlc_production_menu" parent="dlc_root_menu"
               sequence="4" action="action_dlc_production"/>
@@ -104,6 +124,13 @@
 
     <menuitem name="Personnel" id="dlc_settings_personnel_menu" parent="dlc_settings_menu"
               sequence="10" action="action_dlc_personnel"/>
+
+    <menuitem name="Issues by Type" id="dlc_issues_graph__menu" parent="dlc_graph_menu"
+              sequence="1" action="action_dlc_issues_graph"/>
+    <menuitem name="Issues by Resolution status" id="dlc_issues_resolution__menu" parent="dlc_graph_menu"
+              sequence="2" action="action_dlc_issues_graph2"/>
+    <menuitem name="Issues by DLC" id="dlc_issues_bydlc__menu" parent="dlc_graph_menu"
+              sequence="3" action="action_dlc_issues_graph3"/>
 
 
     <!-- This Menu Item must have a parent and an action -->
