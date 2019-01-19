@@ -13,14 +13,15 @@ class Issues(models.Model):
     dlc_status = fields.Selection([('active', 'Active'), ('inactive', 'Inactive')])
     date_report = fields.Date('Date Reported')
     resolution_status = fields.Selection([
-        ('open', 'Open'),
-        ('reported', 'Reported'),
+        ('pending', 'Pending'),
         ('resolved', 'Resolved')
-    ], default='open',track_visibility='onchange',)
+    ], default='pending', track_visibility='onchange',)
     date_resolved = fields.Datetime('Date Resolved')
     notes = fields.Text('Notes')
     open_issues = fields.Integer(compute='open',store=True)
     back_color = fields.Integer('color Index', compute='_change_kanban_color')
+    downtime = fields.Char('This issue has been unresolved for', compute='calculate_downtime')
+    sms_balance = fields.Char(string="SMS Balance", required=False, compute='_get_sms_balance')
 
 
 
@@ -39,7 +40,7 @@ class Issues(models.Model):
     @api.multi
     @api.depends('resolution_status')
     def open(self):
-        count = self.env['dlc.issues'].search_count([('resolution_status', '=', 'open')])
+        count = self.env['dlc.issues'].search_count([('resolution_status', '=', 'pending')])
         self.open_issues = count
 
 
@@ -88,6 +89,23 @@ class Issues(models.Model):
             else:
                 back_color = 2
                 back.back_color = back_color
+
+    @api.one
+    def calculate_downtime(self):
+        downtime = datetime.now() - self.create_date
+        self.downtime = downtime
+
+    @api.one
+    @api.depends()
+    def _get_sms_balance(self):
+        balance = urlretrieve(
+            "http://portal.bulksmsnigeria.net/api/?username=dominic.anyanna@gmail.com&password=wetinBdis1&action=balance")
+        self.sms_balance = balance
+        """
+        @api.depends() should contain all fields that will be used in the calculations.
+        """
+        pass
+
 # class dlc__enhansment__suite(models.Model):
 #     _name = 'dlc__enhansment__suite.dlc__enhansment__suite'
 #     name = fields.Char()

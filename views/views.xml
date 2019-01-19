@@ -6,11 +6,11 @@
         <field name="arch" type="xml">
           <form name="DLC Issues Form">
               <header>
-                  <button name="report_issue" string="Report" class="oe_highlight" resolution_status="open" type="object"/>
+
                   <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="reported" type="object"/>
 
 
-                  <field name="resolution_status" widget="statusbar" statusbar_visible="open,reported,resolved"/>
+                  <field name="resolution_status" widget="statusbar" statusbar_visible="pending,resolved"/>
               </header>
             <sheet>
               <div class="oe_title">
@@ -88,16 +88,21 @@
           <kanban>
               <field name="back_color"/>
               <field name="dlc_id"/>
+              <field name="downtime"/>
                 <templates>
                  <t t-name="kanban-box">
                      <div t-attf-class="#{kanban_color(record.back_color.raw_value)} oe_kanban_global_click">
+                        <a type="button">
+                         <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="reported" type="object">
+                                 <span>Resolve</span>
+                         </button>
+                        </a>
 
                        <div class="oe_kanban_card" t-attf-class="#{kanban_color(record.back_color.raw_value)} oe_kanban_global_click">
-
-
-               <p><h1><field name="dlc_id"/></h1></p>
-               <p><h4><field name="issue_id"/></h4></p>
-               <field name="resolution_status"/>
+                           <p><h1><field name="dlc_id"/></h1></p>
+                           <p><h4><field name="issue_id"/></h4></p>
+                           <p><field name="resolution_status"/></p>
+                           <field name="downtime" string="unresolved for"/>
                </div>
            </div>
        </t>
