@@ -135,7 +135,7 @@
 
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="dlc_settings_provider_menu" name="Service Providers" parent="dlc_settings_menu" action="action_dlc_providers" sequence="11"/>
+
 
 
 
