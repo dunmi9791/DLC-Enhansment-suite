@@ -58,6 +58,21 @@
             ]]>
             </field>
         </record>
+        <record id="add_Production_date_action" model="ir.actions.server">
+            <field name="name">Add Production Date</field>
+            <field name="model_id" ref="model_dlc_production"/>
+            <field name="state" ref="code"/>
+            <field name="code">action = env["dlc.production"].add_production_date()</field>
+        </record>
+
+          <record id="add_date_production" model="base.automation">
+            <field name="name">Add Date to Production</field>
+            <field name="model_id" ref="model_dlc_production"/>
+            <field name="trigger">on_create</field>
+            <field name="server_action_ids" ref="add_Production_date_action"/>
+
+
+        </record>
 
 
 

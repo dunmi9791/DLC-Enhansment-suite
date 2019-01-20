@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 
@@ -17,3 +18,9 @@ class Production(models.Model):
     pdl = fields.Integer(string="PDL", required=False, )
     sdl = fields.Integer(string="SDL", required=False, )
     total = fields.Integer(string="TOTAL", required=False, )
+
+
+    @api.model
+    def add_production_date(self):
+        date = datetime.today()
+        self.date = date

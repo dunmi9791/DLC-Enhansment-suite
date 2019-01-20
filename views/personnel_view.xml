@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="dlc_personnel_tree_view" model="ir.ui.view">
+            <field name="name">DLC Personnel tree view</field>
+            <field name="model">dlc.personnel</field>
+            <field name="arch" type="xml">
+                <tree string="DLC Personnel">
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+        <record id="dlc_personnel_form_view" model="ir.ui.view">
+            <field name="name">DLC Personnel form view</field>
+            <field name="model">dlc.personnel</field>
+            <field name="arch" type="xml">
+                <form string="DLC Personnel">
+                    <sheet>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="dlc_id"/>
+                            <field name="supervisor"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

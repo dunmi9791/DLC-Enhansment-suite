@@ -12,6 +12,36 @@
             </field>
         </record>
 
+        <record id="dlcs_form_view" model="ir.ui.view">
+            <field name="name">DLCs form view</field>
+            <field name="model">dlc.workstation</field>
+            <field name="arch" type="xml">
+                <form string="DLC workstations">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="lga"/>
+                            <field name="state"/>
+                            <field name="status"/>
+                        </group>
+                        <notebook>
+                            <page string="Dlc Personnel">
+                                <group>
+                                    <field name="dlc_operator"/>
+                                </group>
+                            </page>
+                            <page string="Issues">
+                                <group>
+                                    <field name="issues_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
 
     </data>
 </odoo>

@@ -31,7 +31,8 @@
         'views/dlcs_view.xml',
         'views/issuetype_view.xml',
         'data/automated_actions.xml',
-        'views/production_view.xml'
+        'views/production_view.xml',
+        'views/personnel_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
