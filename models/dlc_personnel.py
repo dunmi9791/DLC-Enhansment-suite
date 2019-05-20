@@ -13,6 +13,7 @@ class Dlcpersonnel(models.Model):
     supervisor = fields.Boolean(string="Is a Supervisor", default=False)
     first_name = fields.Char(string="First Name")
     last_name = fields.Char(string="Last Name")
+    pin = fields.Char(string="PIN")
 
 
     @api.one
@@ -23,3 +24,7 @@ class Dlcpersonnel(models.Model):
         """
         @api.depends() should contain all fields that will be used in the calculations.
         """
+
+    _sql_constraints = [
+        ('pin_unique', 'unique(pin)', 'PIN must be unique')
+    ]

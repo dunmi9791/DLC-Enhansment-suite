@@ -16,6 +16,7 @@ class WorkStation(models.Model):
     status = fields.Selection(string="DLC Status", selection=[('active', 'Active'), ('inactive', 'Inactive'), ], required=False, default= 'active' )
     total_dlc = fields.Integer(string="Total DLCs", required=False, compute='_total_dlc')
     inactive_dlc = fields.Integer(string="Inactive DLCs", required=False, compute='_inactive_dlc')
+    dlc_cug = fields.Char(string="DLC CUG Number")
 
 
     @api.one
@@ -33,4 +34,8 @@ class WorkStation(models.Model):
         @api.depends() should contain all fields that will be used in the calculations.
         """
         pass
+
+    _sql_constraints = [
+        ('name_unique', 'unique(name)', 'DLC Name must be unique')
+        ]
 

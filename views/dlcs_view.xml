@@ -8,6 +8,7 @@
                 <tree string="DLC Workstations">
                     <field name="name"/>
                     <field name="status"/>
+                    <field name="dlc_cug"/>
                 </tree>
             </field>
         </record>
@@ -23,6 +24,7 @@
                             <field name="lga"/>
                             <field name="state"/>
                             <field name="status"/>
+                            <field name="dlc_cug"/>
                         </group>
                         <notebook>
                             <page string="Dlc Personnel">

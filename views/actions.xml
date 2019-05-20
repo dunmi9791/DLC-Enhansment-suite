@@ -44,7 +44,7 @@
         <field name="name">Production</field>
         <field name="res_model">dlc.production</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('workstation_id', '=', 'Total')]</field>
+
     </record>
 
      <record model="ir.actions.act_window" id="action_dlc_dlcs">
