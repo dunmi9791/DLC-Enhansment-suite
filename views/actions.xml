@@ -99,7 +99,7 @@
               sequence="1" action="action_dlc_issues"/>
 
 
-    <menuitem name="Manage Customers" id="dlc_customer_menu" parent="dlc_root_menu"
+    <menuitem name="Applicant Data" id="dlc_customer_menu" parent="dlc_root_menu"
               sequence="2" action="action_dlc_customer"/>
 
     <menuitem name="Graphs" id="dlc_graph_menu" parent="dlc_root_menu"

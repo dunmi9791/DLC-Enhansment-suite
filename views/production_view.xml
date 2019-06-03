@@ -20,6 +20,22 @@
                 </tree>
             </field>
         </record>
+        <record id="applicant_tree_view" model="ir.ui.view">
+            <field name="name">Applicant Tree View</field>
+            <field name="model">dlc.customers</field>
+            <field name="arch" type="xml">
+                <tree string="Applicant Data">
+                    <field name="dl_number"/>
+                    <field name="name"/>
+                    <field name="dob"/>
+                    <field name="expiry_date"/>
+                    <field name="mobile_number"/>
+                    <field name="email"/>
+
+                </tree>
+            </field>
+        </record>
+
 
 
     </data>
