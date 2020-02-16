@@ -8,6 +8,7 @@
                 <tree string="DLC Workstations">
                     <field name="name"/>
                     <field name="status"/>
+                    <field name="sum_production_7days"/>
                     <field name="dlc_cug"/>
                 </tree>
             </field>
@@ -25,6 +26,8 @@
                             <field name="state"/>
                             <field name="status"/>
                             <field name="dlc_cug"/>
+                            <field name="period"/>
+                            <field name="today"/>
                         </group>
                         <notebook>
                             <page string="Dlc Personnel">
@@ -35,6 +38,16 @@
                             <page string="Issues">
                                 <group>
                                     <field name="issues_ids"/>
+                                </group>
+                            </page>
+                            <page string="Production">
+                                <group>
+                                    <field name="production_ids"/>
+                                </group>
+                            </page>
+                            <page string="Production2">
+                                <group>
+                                    <field name="production_id3"/>
                                 </group>
                             </page>
                         </notebook>

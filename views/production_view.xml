@@ -35,6 +35,51 @@
                 </tree>
             </field>
         </record>
+        <record id="productiondetails_tree_view" model="ir.ui.view">
+            <field name="name">Production Details Tree View</field>
+            <field name="model">dlc.pdetails</field>
+            <field name="arch" type="xml">
+                <tree string="Production Details">
+
+                    <field name="date"/>
+                    <field name="workstation_id"/>
+                    <field name="card_type"/>
+                    <field name="cdl"/>
+                    <field name="gdl"/>
+                    <field name="msl"/>
+                    <field name="pdl"/>
+                    <field name="sdl"/>
+                    <field name="ddl"/>
+                    <field name="total"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_production_data_form" model="ir.ui.view">
+        <field name="name">view production data form</field>
+        <field name="model">dlc.pdata</field>
+        <field name="arch" type="xml">
+          <form name="DLC production data Form">
+              <header>
+                  <button name="process_data" string="Process Data" class="oe_highlight" states="unprocessed" type="object"/>
+                  <field name="state" widget="statusbar" statusbar_visible="unprocessed,Processed"/>
+              </header>
+                  <sheet>
+                      <group>
+                          <field name="start_date"/>
+                          <field name="end_date"/>
+                      </group>
+                      <notebook>
+                          <page string="Production Details">
+                              <field name="production_details_ids">
+
+                              </field>
+                          </page>
+                      </notebook>
+                  </sheet>
+          </form>
+        </field>
+        </record>
 
 
 

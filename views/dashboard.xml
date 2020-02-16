@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<odoo>
+
+
+
+    <record id="dashboard_form_view" model="ir.ui.view">
+        <field name="name">Dashboard Form</field>
+        <field name="model">board.board</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <board style="1-2">
+                    <column>
+                        <action
+                            string="Issues By Type"
+                            name="%(action_dlc_issues_graph)d"/>
+                        <action
+                            string="Issues by Resolution Status"
+                            name="%(action_dlc_issues_graph2)d"/>
+                    </column>
+                    <column>
+                        <action
+                            string="Issues By Dlc "
+                            name="%(action_dlc_issues_graph3)d"/>
+                    </column>
+                </board>
+            </form>
+        </field>
+    </record>
+
+    <record id="dlcsuite_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="dashboard_form_view"/>
+    </record>
+
+    <menuitem
+        name="Dashboard"
+        parent="dlc_root_menu"
+        action="dlcsuite_dashboard"
+        sequence="1"
+        id="menu_dashboard"/>
+
+</odoo>

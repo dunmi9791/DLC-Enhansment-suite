@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail', 'base_automation', 'contacts'],
+    'depends': ['base', 'mail', 'base_automation', 'contacts', 'board'],
 
     # always loaded
     'data': [
@@ -32,6 +32,7 @@
         'views/issuetype_view.xml',
         'data/automated_actions.xml',
         'views/production_view.xml',
+        'views/dashboard.xml',
         'views/personnel_view.xml'
     ],
     # only loaded in demonstration mode

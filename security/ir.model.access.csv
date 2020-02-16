@@ -9,3 +9,5 @@ access_dlc_enhansment_lga,dlc_enhansment_lga,model_dlc_lga,,1,1,1,1
 access_dlc_enhansment_types,dlc_enhansment_types,model_issues_types,,1,1,1,1
 access_dlc_enhansment_personnel,dlc_enhansment_personnel,model_dlc_personnel,,1,1,1,1
 access_dlc_enhansment_providers,dlc_enhansment_providers,model_service_providers,,1,1,1,1
+access_dlc_enhansment_production2,dlc_enhansment_production2,model_dlc_pdata,,1,1,1,1
+access_dlc_enhansment_production3,dlc_enhansment_production3,model_dlc_pdetails,,1,1,1,1
