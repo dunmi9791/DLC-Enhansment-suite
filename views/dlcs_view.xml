@@ -14,12 +14,30 @@
             </field>
         </record>
 
+        <record id="dlc_search" model="ir.ui.view">
+        <field name="name">dlc.search</field>
+        <field name="model">dlc.workstation</field>
+        <field name="arch" type="xml">
+            <search string="Search DLCs">
+                <field name="name" filter_domain="['|',('name', 'ilike', self)]"/>
+                <field name="name"/>
+                <separator />
+                <filter string="Zero Production" name="zero" domain="[('sum_production_7days', '=', '0')]"/>
+            </search>
+        </field>
+    </record>
+
         <record id="dlcs_form_view" model="ir.ui.view">
             <field name="name">DLCs form view</field>
             <field name="model">dlc.workstation</field>
             <field name="arch" type="xml">
                 <form string="DLC workstations">
                     <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        </button>
+                        </div>
                         <group>
                             <field name="name"/>
                             <field name="lga"/>
@@ -45,11 +63,7 @@
                                     <field name="production_ids"/>
                                 </group>
                             </page>
-                            <page string="Production2">
-                                <group>
-                                    <field name="production_id3"/>
-                                </group>
-                            </page>
+
                         </notebook>
                         
                     </sheet>

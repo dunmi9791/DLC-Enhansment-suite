@@ -52,4 +52,7 @@ class DlcCustomers(models.Model):
 
 
 
+    _sql_constraints = [
+        ('dl_unique', 'unique(dl_number)', 'Licience number must be unique')
+    ]
 

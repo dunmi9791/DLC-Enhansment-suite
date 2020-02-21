@@ -61,8 +61,7 @@
         <field name="arch" type="xml">
           <form name="DLC production data Form">
               <header>
-                  <button name="process_data" string="Process Data" class="oe_highlight" states="unprocessed" type="object"/>
-                  <field name="state" widget="statusbar" statusbar_visible="unprocessed,Processed"/>
+
               </header>
                   <sheet>
                       <group>

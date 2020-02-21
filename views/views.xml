@@ -7,7 +7,7 @@
           <form name="DLC Issues Form">
               <header>
 
-                  <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="reported" type="object"/>
+                  <button name="resolve_issue" string="Resolve" class="oe_highlight" resolution_status="pending" type="object"/>
 
 
                   <field name="resolution_status" widget="statusbar" statusbar_visible="pending,resolved"/>
@@ -27,7 +27,7 @@
                   <group>
                       <field name="date_report"/>
                       <field name="notes"/>
-                      <field name="back_color"/>
+
                   </group>
               </group>
             </sheet>

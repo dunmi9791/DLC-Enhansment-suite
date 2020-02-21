@@ -22,6 +22,9 @@
                         <action
                             string="Issues By Dlc "
                             name="%(action_dlc_issues_graph3)d"/>
+                        <action
+                              string="Zero Production in Last 7 Days"
+                              name="%(action_dlc_tree_dashboard)d"/>
                     </column>
                 </board>
             </form>

@@ -31,44 +31,20 @@ class WorkStation(models.Model):
     production_id2s = fields.One2many(comodel_name="dlc.pdetails", inverse_name="workstation_id", string="Production",
                                      required=False, )
     production_id3 = fields.Many2many(comodel_name="dlc.pdetails", relation="workstation_id", column1="", column2="", string="", )
+    active = fields.Boolean(default=True)
 
 
 
 
-    @api.one
-    @api.depends()
-    def _total_dlc(self):
-        total = self.env['dlc.workstation'].search_count()
-        self.total_dlc = total
-
-    @api.one
-    @api.depends()
-    def _last_seven(self):
-        today = fields.Date.today()
-        d = today - timedelta(days=7)
-        self.period = d
 
 
 
-    @api.one
-    @api.depends()
-    def _inactive_dlc(self):
-        inactive = self.env['dlc.workstation'].search_count([('status', '=', 'inactive')])
-        self.inactive_dlc = inactive
-        """
-        @api.depends() should contain all fields that will be used in the calculations.
-        """
-        pass
     @api.one
     @api.depends('production_ids.total', )
     def _dlc_production(self):
-        self.sum_production_7days = sum(production.total for production in self.production_id2s)
-        """
-        @api.depends() should contain all fields that will be used in the calculations.
-        """
-        pass
-
-
+        production_list = self.production_ids.filtered(
+            lambda r: r.date and (date.today() - timedelta(days=7)) <= r.date <= date.today())
+        self.sum_production_7days = sum(production.total for production in production_list)
 
 
 

@@ -96,6 +96,12 @@
           </p>
         </field>
     </record>
+     <record model="ir.actions.act_window" id="action_dlc_tree_dashboard">
+        <field name="name">Zero production DLC</field>
+        <field name="res_model">dlc.workstation</field>
+        <field name="view_mode">tree</field>
+         <field name="context">{"search_default_zero":1}</field>
+    </record>
 
 
 
