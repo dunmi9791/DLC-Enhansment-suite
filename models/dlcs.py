@@ -24,8 +24,6 @@ class WorkStation(models.Model):
     total_dlc = fields.Integer(string="Total DLCs", required=False, compute='_total_dlc')
     inactive_dlc = fields.Integer(string="Inactive DLCs", required=False, compute='_inactive_dlc')
     dlc_cug = fields.Char(string="DLC CUG Number")
-    today = fields.Date(default=date.today())
-    period = fields.Date(compute='_last_seven', store=True)
     production_ids = fields.One2many(comodel_name="dlc.pdetails", inverse_name="workstation_id", string="Production", required=False, )
     sum_production_7days = fields.Integer(string="Production in Last 7 Days",  compute='_dlc_production', required=False,)
     production_id2s = fields.One2many(comodel_name="dlc.pdetails", inverse_name="workstation_id", string="Production",

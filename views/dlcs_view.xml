@@ -44,8 +44,6 @@
                             <field name="state"/>
                             <field name="status"/>
                             <field name="dlc_cug"/>
-                            <field name="period"/>
-                            <field name="today"/>
                         </group>
                         <notebook>
                             <page string="Dlc Personnel">
