@@ -15,7 +15,7 @@
 
 
 <!--        </record>-->
-<!--        <record id="email_birthday_wishes_customer_template" model="mail.template">-->
+        <record id="email_birthday_wishes_customer_template" model="mail.template">
             <field name="name">Birthday Wishes Template</field>
             <field name="subject">Birthday Wishes ${object.name}</field>
             <field name="email_from">${user.email|safe}</field>
